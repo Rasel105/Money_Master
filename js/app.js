@@ -14,18 +14,29 @@ function expenseCalculation() {
     
     // total calculation 
     document.getElementById("total-expense").innerText = totalExpense;
-    document.getElementById('balance').innerText = finalExpense;
+    const existingBalace = document.getElementById('balance').innerText = finalExpense;
+    
+    return existingBalace
 
 }
 
 
 document.getElementById("calculate-btn").addEventListener("click", function () {
 
-    const value = expenseCalculation();
+    expenseCalculation();
     
 
 });
 
-document.getElementById('savings').addEventListener('click', function () {
+document.getElementById('savings-btn').addEventListener('click', function () {
+    const totalAmount = expenseCalculation();
+    console.log(totalAmount)
+    const savingInput = document.getElementById('savings-input');
+    const salaryInputValue = parseFloat(savingInput.value)
+    console.log(salaryInputValue)
+    
+
+    const savingsPercentage = (totalAmount / salaryInputValue) * 100
+    console.log(savingsPercentage)
     
 })
