@@ -8,29 +8,21 @@ function expenseCalculation() {
     const clothesInput = document.getElementById("clothes-cost");
     const clothesInputValue = parseFloat(clothesInput.value);
 
-
+    // expense calculation 
     const totalExpense = foodCostValue + rentInputValue + clothesInputValue
     const finalExpense = salaryInputValue  - totalExpense
     
     // total calculation 
     document.getElementById("total-expense").innerText = totalExpense;
     const existingBalace = document.getElementById('balance').innerText = finalExpense;
-    
+    salaryInput.value = ''
     return existingBalace
 
 }
 
-
-document.getElementById("calculate-btn").addEventListener("click", function () {
-
-    expenseCalculation();
-    
-
-});
-
-document.getElementById('savings-btn').addEventListener('click', function () {
+function percentageCalculation()
+{
     const totalAmount = expenseCalculation();
-    console.log(totalAmount)
     const savingInput = document.getElementById('savings-input');
     const salaryInputValue = parseFloat(savingInput.value);
 
@@ -38,4 +30,14 @@ document.getElementById('savings-btn').addEventListener('click', function () {
     document.getElementById('savings-show').innerText = savingsPercentage;
 
     document.getElementById('remaining-amount').innerText = totalAmount - savingsPercentage;
+}
+// finding calculate button 
+document.getElementById("calculate-btn").addEventListener("click", function () {
+    expenseCalculation();
+});
+
+
+document.getElementById('savings-btn').addEventListener('click', function () {
+    // receiving the existing balance 
+    percentageCalculation()
 })
