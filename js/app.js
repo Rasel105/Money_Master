@@ -32,11 +32,10 @@ document.getElementById('savings-btn').addEventListener('click', function () {
     const totalAmount = expenseCalculation();
     console.log(totalAmount)
     const savingInput = document.getElementById('savings-input');
-    const salaryInputValue = parseFloat(savingInput.value)
-    console.log(salaryInputValue)
-    
+    const salaryInputValue = parseFloat(savingInput.value);
 
-    const savingsPercentage = (totalAmount / salaryInputValue) * 100
-    console.log(savingsPercentage)
-    
+    const savingsPercentage = (totalAmount * salaryInputValue) / 100;
+    document.getElementById('savings-show').innerText = savingsPercentage;
+
+    document.getElementById('remaining-amount').innerText = totalAmount - savingsPercentage;
 })
