@@ -1,7 +1,8 @@
 function expenseCalculation() {
     const salaryInput = document.getElementById("salary-input");
     const salaryInputValue = parseFloat(salaryInput.value);
-    const foodCost = document.getElementById("food-cost");
+    if (salaryInputValue > 0) {
+        const foodCost = document.getElementById("food-cost");
     const foodCostValue = parseFloat(foodCost.value);
     const rentInput = document.getElementById("rent-cost");
     const rentInputValue = parseFloat(rentInput.value);
@@ -17,6 +18,12 @@ function expenseCalculation() {
     const existingBalace = document.getElementById('balance').innerText = finalExpense;
     salaryInput.value = ''
     return existingBalace
+    }
+    {
+        const errors =  document.getElementById()
+    }
+    
+   
 
 }
 
