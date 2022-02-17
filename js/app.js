@@ -43,3 +43,44 @@ function expenseCalculation() {
    }
   
 }
+// finding calculate button 
+document.getElementById("calculate-btn").addEventListener("click", function () {
+    expenseCalculation()
+});
+
+// second function start here
+
+function savingsCalculation(){
+    // Receiving the availableBalance here 
+    const totalAmount = expenseCalculation();
+    const percentage = document.getElementById('savings-input');
+    const salaryInputValue = totalSalary()
+    const percentageValue = parseFloat(percentage.value);
+
+    // 1st error handling
+
+   if(percentageValue > 0 ){
+    const savingsPercentageAmount = (salaryInputValue * percentageValue) / 100;
+
+     if(totalAmount < savingsPercentageAmount ){
+        document.getElementById('fail2').style.display = 'block'
+    }else{
+        document.getElementById('savings-show').innerText = savingsPercentageAmount.toFixed(2);
+
+        document.getElementById('remaining-amount').innerText = (totalAmount - savingsPercentageAmount).toFixed(2);
+        percentage.value = '';
+    }
+         
+      
+    }
+   else{
+    //    showing err to the UI 
+    document.getElementById('fail').style.display = 'block'
+   }
+}
+
+// finding the saving button and call the second function 
+
+document.getElementById('savings-btn').addEventListener('click', function(){
+    savingsCalculation()
+})
