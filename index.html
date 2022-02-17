@@ -12,35 +12,44 @@
     <title>Money Control</title>
 </head>
 
-<body>
+<body> 
+    <!-- header sectin start  -->
     <header>
-        <h1 class="text-center mt-5 mb-4 text-primary">Money Control</h1>
+        <h1 class="text-center mt-5 mb-4 text-primary">Money Controller</h1>
          <!-- ------------------ error part  -------------------->
         <div class="d-flex justify-content-center">
-                <p id="fail" class="errors mb-4">Please enter valid input</p>               
-            </div>
+            <p id="fail" class="errors mb-4 ">Please enter valid input</p>
+            <p id="fail2" class="errors mb-4 ">Ohps! You don't have enough Money.</p>
+            <p id="fail3" class="errors mb-4 ">Ohps! You can't Expenses more than salary.</p>
+        </div>
+                       
+                    
     </header>
+
+    <!-- main section start -->
     <main>
         <section class="container">
-            <div >
+            <div class="mb-5">
                 <div class="row">
                     <div class="col-md">
 
-                        <!------------------------------ picure added------------------------- -->
+                        <!------------------------------ picture added------------------------- -->
 
                         <img height="100%" width="100%" class="mb-5" src="./images/moneycontrol.jpg" alt="" />
                     </div>
-                    <div class="col-md">
-                        <h3 class="text-center mb-3 fw-bold">Income</h3>
+
+                    <!-- calculator section  --> 
+                    <div class="col-md bg-color">
+                        <h2 class="text-center my-4 fw-bold">Monthly Income</h2>
                         <div>
                             <div class="row">
                                 <label class="col-sm-2 col-form-label col-form-label-lg fs-3 fw-bold">Income:
                   </label>
                                 <div class="col-sm-10 text-center">
-                                    <input id="salary-input" type="number" class="form-control-lg fs-5" placeholder="Salary" />
+                                    <input id="salary-input" type="text" class="form-control-lg fs-5" placeholder="Salary" />
                                 </div>
                             </div>
-                            <h3 class="text-center mb-3 mt-3 fw-bold">Expenses:</h3>
+                            <h2 class="text-center  my-4 fw-bold">Expenses</h2>
                             <div class="row">
                                 <label class="col-sm-2 col-form-label col-form-label-lg fs-3 fw-bold">Food:</label
                   >
@@ -53,7 +62,7 @@
                     />
                   </div>
                   <label
-                    class="col-sm-2 col-form-label col-form-label-lg fs-3 fw-bold"
+                    class="col-sm-2  fs-3 fw-bold"
                     >Rent:</label
                   >
                   <div class="col-sm-10 text-center">
@@ -66,7 +75,7 @@
                   </div>
                   <label class="col-sm-2 fs-3 fw-bold">Clothes:</label>
                                 <div class="col-sm-10 text-center">
-                                    <input id="clothes-cost" type="number" class="form-control-lg fs-5" placeholder="Clothes" />
+                                    <input id="clothes-cost" class="size form-control-lg m-3" type="number" placeholder="Clothes" />
                                     <div class="text-center w-100">
                                         <button id="calculate-btn" type="button" class="btn btn-primary btn-lg p-4 mt-4 fs-4 fw-bold">
                         Calculate
@@ -79,20 +88,20 @@
                                 </div>
                                 <div class="text-center">
                                     <h3  class="size">Saving</h3>
-                                    <input id="savings-input" class="size form-control-lg" type="number" />
+                                    <input id="savings-input" class="size form-control-lg m-3" type="number" />
                                     <span class="fs-3 mx-3">%</span>
                                     <button id="savings-btn" type="button" class="btn btn-primary btn-lg size mb-3">
                       Save
                     </button>
                                     <h2 class="mt-3">Saving Amount:<span id="savings-show">0</span></h2>
-                                    <h2 class="mt-3">Remaining Balance:<span id="remaining-amount">0</span></h2>
+                                    <h2 class="my-4">Remaining Balance:<span id="remaining-amount">0</span></h2>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ------------------ error part  -------------------->
+           
             
         </section>
     </main>
